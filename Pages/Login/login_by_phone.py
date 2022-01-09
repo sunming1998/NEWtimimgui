@@ -71,10 +71,13 @@ class LoginByPhone:
         """
         self.base_action.clickElement(self.register)
 
+
 if __name__ =='__main__':
     a = LoginByPhone()
-    a.base_action.startApp()
+    a.base_action.clearApp()
     time.sleep(5)
+    a.base_action.startApp()
+    time.sleep(2)
     a.click_login_by_phone()
     time.sleep(3)
     a.click_agreement()

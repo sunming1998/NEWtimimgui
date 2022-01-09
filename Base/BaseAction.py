@@ -161,17 +161,14 @@ class BaseAction(object):
         """
         return self.findElement(element).wait(timeout=5).exists()
 
-    def click_size(self, zb):
-        """
-        点击某个坐标
-        :param zb: 坐标 参数形式[x,y]
-        :return:
-        """
-        self.__touch(zb)
-
     def click_coordinate(self, zb):
-        coordinate = self.get_coordinate(zb[0],zb[1])
-        self.click_size(coordinate)
+        '''
+
+        :param zb:
+        :return:
+        '''
+        real_zb = int(self.width * zb[0]), int(self.height * zb[1])
+        self.__touch(real_zb)
 
     def swipe_to(self, start, end, duration=0.5):
         """
@@ -210,22 +207,6 @@ class BaseAction(object):
         :return:
         """
         self.__poco.swipe(element, vectory, duration=duration)
-
-    def get_coordinate(self, x, y):
-        """
-        根据百分比获取位置的绝对坐标
-        :param x:横坐标 百分比[0,1]
-        :param y:纵坐标百分比[0,1]
-        :return:
-        """
-        return int(self.width) * x, int(self.height) * y
-
-    def get_percentage(self,x):
-        """
-        根据绝对坐标算出百分比坐标
-        :return:
-        """
-        return x[0]/self.width, x[1]/self.height
 
     def keySearch(self):
         """

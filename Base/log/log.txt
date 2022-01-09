@@ -1,0 +1,3 @@
+{"tag": "function", "depth": 1, "time": 1641563157.4885948, "data": {"name": "start_app", "call_args": {"package": "com.huiian.timing", "activity": null}, "start_time": 1641563157.1070118, "ret": null, "end_time": 1641563157.4885948}}
+{"tag": "function", "depth": 2, "time": 1641563163.0456123, "data": {"name": "try_log_screen", "call_args": {"screen": null, "quality": null, "max_size": null}, "start_time": 1641563162.4984205, "ret": {"screen": "1641563163010.jpg", "resolution": [1080, 2400]}, "end_time": 1641563163.0456123}}
+{"tag": "function", "depth": 1, "time": 1641563163.6199546, "data": {"name": "touch", "call_args": {"v": [777.0, 1650.0], "kwargs": {}, "times": 1}, "start_time": 1641563162.4984205, "ret": [777.0, 1650.0], "end_time": 1641563163.6199546}}

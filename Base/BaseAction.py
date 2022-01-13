@@ -243,3 +243,7 @@ class BaseAction(object):
 
     def quitDriver(self):
         self.__quit()
+
+if __name__ == '__main__':
+    A = BaseAction()
+    print(A.width, A.height)

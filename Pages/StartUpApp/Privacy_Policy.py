@@ -10,8 +10,8 @@ class PrivacyPolicy():
         用户隐私政策以及存储权限
         """
         self.base_action = BaseAction()
-        self.agree_button = [0.71,0.68]
-        self.jurisdiction = "com.android.permissioncontroller:id/permission_allow_button"
+        self.agree_button = [0.69,0.73]
+        self.jurisdiction = "com.android.packageinstaller:id/permission_allow_button"
         self.agreement = "com.huiian.timing:id/iv_check"
 
     def click_agree(self):
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     A.base_action.clearApp()
     time.sleep(2)
     A.base_action.startApp()
-    time.sleep(5)
+    time.sleep(3)
     A.click_agree()
     time.sleep(2)
     A.click_jurisdiction()

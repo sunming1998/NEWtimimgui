@@ -74,12 +74,12 @@ class LoginByPhone:
 
 if __name__ =='__main__':
     a = LoginByPhone()
-    a.base_action.clearApp()
-    time.sleep(5)
-    a.base_action.startApp()
-    time.sleep(2)
+    # a.base_action.clearApp()
+    # time.sleep(1)
+    # a.base_action.startApp()
+    # time.sleep(2)
     a.click_login_by_phone()
-    time.sleep(3)
+    time.sleep(1)
     a.click_agreement()
     time.sleep(1)
     a.click_login_by_password()

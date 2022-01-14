@@ -37,7 +37,7 @@ class BaseAction(object):
 
     def clearApp(self):
         """
-        清楚App数据
+        清除App数据
         :return:
         """
         clear_app(self.__packge)
@@ -118,6 +118,15 @@ class BaseAction(object):
         """
         self.findElement(element).click()
 
+    def clickElementLongTime(self, element):
+        """
+        长按元素
+        :param element:
+        :return:
+        """
+        self.findElement(element).long_click(duration=3)
+
+
     def clickElementWait(self, element, times=5):
         """
          等待一定时长找到元素后再点击
@@ -127,6 +136,7 @@ class BaseAction(object):
         """
         self.findElement(element).wait(timeout=times).click()
 
+
     def set_text(self, element, content):
         """
         向文本框输入内容
@@ -135,6 +145,7 @@ class BaseAction(object):
         :return:
         """
         self.findElement(element).set_text(content)
+
 
     def get_text(self, element):
         """

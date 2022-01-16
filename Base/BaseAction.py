@@ -3,6 +3,7 @@
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+import os
 
 
 class BaseAction(object):
@@ -219,6 +220,13 @@ class BaseAction(object):
         """
         self.__poco.swipe(element, vectory, duration=duration)
 
+    def screenshot(self, filename, msg):
+        '''
+        获取当前页面截图
+        :return:
+        '''
+        snapshot(filename=os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\logs\\' + filename, msg=msg)
+
     def keySearch(self):
         """
         搜索键
@@ -250,6 +258,12 @@ class BaseAction(object):
         self.__keyEvent(keys)
 
     def setattr(self, element, attr, value):
+        '''
+        :param element:元素任意属性
+        :param attr: 修改元素属性的名称
+        :param value:修改元素属性的值
+        :return:
+        '''
         self.__setattr(self.findElement(element), attr, value)
 
     def quitDriver(self):

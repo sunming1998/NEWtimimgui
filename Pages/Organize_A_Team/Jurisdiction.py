@@ -74,3 +74,4 @@ if __name__ =='__main__':
     time.sleep(1)
     a.click_location2()
     time.sleep(1)
+

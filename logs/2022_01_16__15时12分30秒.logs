@@ -1,0 +1,1 @@
+2022-01-16 15:12:30,909 - Base_Log.py[line:31] - ERROR: 数据库连接失败！'NoneType' object has no attribute 'encoding'

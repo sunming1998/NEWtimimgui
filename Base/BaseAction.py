@@ -2,6 +2,9 @@
 
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
+import logging
+
+from airtest.utils.logger import get_logger
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 import os
 
@@ -16,6 +19,8 @@ class BaseAction(object):
             auto_setup(__file__, logdir=True, devices=["Android:///", ])
         # 获取定位元素的驱动
         self.__poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
+        logger = get_logger("airtest")
+        logger.setLevel(logging.ERROR)
         # 包名
         self.__packge = "com.huiian.timing"
         # 获取屏幕宽度
@@ -29,7 +34,9 @@ class BaseAction(object):
         self.__quit = quit
         self.__touch = touch
 
-    def startApp(self):
+
+
+    def start_app(self):
         """
         打开app
         :return:
@@ -42,6 +49,13 @@ class BaseAction(object):
         :return:
         """
         clear_app(self.__packge)
+
+    def kill_app(self):
+        """
+        杀掉app进程
+        :return:
+        """
+        shell("am force-stop '{}'".format(self.__packge))
 
     def stopApp(self):
         """
@@ -109,7 +123,8 @@ class BaseAction(object):
         :param times:点击次数
         :return:
         """
-        self.__touch(Template(imgFile), times=times)
+        self.__touch(Template(os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\images\{}'.format(imgFile)),
+                     times=times)
 
     def clickElement(self, element):
         """
@@ -220,12 +235,12 @@ class BaseAction(object):
         """
         self.__poco.swipe(element, vectory, duration=duration)
 
-    def screenshot(self, filename, msg):
+    def screenshot(self, filename, msg=''):
         '''
         获取当前页面截图
         :return:
         '''
-        snapshot(filename=os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\logs\\' + filename, msg=msg)
+        snapshot(filename=os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + r'\ScreenShot\\' + filename, msg=msg)
 
     def keySearch(self):
         """

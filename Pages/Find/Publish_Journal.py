@@ -1,7 +1,8 @@
 from Base.BaseAction import BaseAction
 import time
 
-class Publish_Journal():
+
+class PublishJournal:
     base_action = BaseAction()
     publish = "com.huiian.timing:id/iv_publish"
     take_a_video = [0.31, 0.57]
@@ -76,9 +77,10 @@ class Publish_Journal():
         """
         self.base_action.clickElement(self.release2)
 
+
 if __name__ =='__main__':
-    a = Publish_Journal()
-    a.base_action.startApp()
+    a = PublishJournal()
+    a.base_action.start_app()
     a.click_publish()
     time.sleep(1)
     a.click_take_a_video()

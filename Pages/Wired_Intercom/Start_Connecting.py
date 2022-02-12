@@ -7,7 +7,7 @@ class StartConnecting():
     """
     base_action = BaseAction()
     fm = "com.huiian.timing:id/iv_FM"                                 # 点击fm按钮
-    take_new_connect = "com.huiian.timing:id/iv_start_press"             # ”电话“按钮
+    take_new_connect = "com.huiian.timing:id/iv_start_press"          # ”电话“按钮
     channel_description = "com.huiian.timing:id/tv_dynamics_content"  # 频道描述按钮
     take_text = "com.huiian.timing:id/content_et"                     # 输入按钮
     determine = "com.huiian.timing:id/activity_banner_right_tv"       # 确定按钮

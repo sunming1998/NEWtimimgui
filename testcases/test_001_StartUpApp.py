@@ -59,8 +59,9 @@ class Test_StartUpApp:
         time.sleep(1)
         Pages().privacypolicy.click_agree()
         time.sleep(1)
-        result = self.base_action.isExistsEment(Pages().privacypolicy.jurisdiction)
-        if result is True:
+        Pages().privacypolicy.click_jurisdiction()
+        result = self.base_action.isExistsEment(Pages().loginbyphone.login_by_phone)
+        if result:
             pass
         else:
             self.base_action.screenshot('error2.png')
@@ -72,4 +73,4 @@ class Test_StartUpApp:
 
 
 if __name__ == '__main__':
-    pytest.main(['-vs', 'StartUpApp_test.py'])
+    pytest.main(['-vs', 'test_001_StartUpApp.py'])

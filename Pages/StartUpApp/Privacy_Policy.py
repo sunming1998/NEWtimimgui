@@ -67,10 +67,6 @@ class PrivacyPolicy():
 
 
 
-
-
-
-
 if __name__ == '__main__':
 
     A = PrivacyPolicy()

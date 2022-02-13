@@ -3,6 +3,7 @@ from Pages.Login.login_by_phone import LoginByPhone
 from Pages.StartUpApp.Privacy_Policy import PrivacyPolicy
 from Pages.Organize_A_Team.Jurisdiction import Jurisdiction
 from Pages.Wired_Intercom.Start_Connecting import StartConnecting
+from Pages.Organize_A_Team.adolescent_model import Child
 
 
 class Pages(object):
@@ -14,6 +15,7 @@ class Pages(object):
         self.loginbyphone = LoginByPhone()      # 登录页
         self.privacypolicy = PrivacyPolicy()    # 隐私政策
         self.jurisdiction = Jurisdiction()      # 权限页面
+        self.child = Child()                    # 青少年政策
         self.startconnecting = StartConnecting() # 语聊房
 
 

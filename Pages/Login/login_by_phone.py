@@ -23,12 +23,12 @@ class LoginByPhone:
         """
         self.base_action.clickElement(self.login_by_phone)
 
-    def enter_phone_by_captcha(self):
+    def enter_phone(self,phone):
         """
         输入手机号
         :return:
         """
-        self.base_action.findElement(self.send_phone).set_text()
+        self.base_action.set_text(self.send_phone,phone)
 
     def click_take_captcha(self):
         """
@@ -63,7 +63,7 @@ class LoginByPhone:
         输入手机号对应的密码
         :return:
         """
-        self.base_action.findElement(self.send_password).set_text(pwd)
+        self.base_action.set_text(self.send_password,pwd)
 
     def click_register(self):
         """

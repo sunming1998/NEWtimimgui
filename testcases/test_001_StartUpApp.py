@@ -28,11 +28,11 @@ class Test_StartUpApp:
         if result is True:                                       # 判断这个元素是否存在，如果存在就pass，不存在就调用截图方法
             pass
         else:
-            self.base_action.screenshot('error.png')
+            self.base_action.screenshot('start_app_error.png')
 
         assert result
 
-    def test_002_disagree(self):
+    def test_002_disagree_quit_app(self):
         """
         点击不同意退出app
         :return:
@@ -44,7 +44,7 @@ class Test_StartUpApp:
         Pages().privacypolicy.click_quit()             # 点击退出
         result = self.base_action.isExistsEment(Pages().privacypolicy.agreement)
         if result is True:
-            self.base_action.screenshot('error1.png')
+            self.base_action.screenshot('quit_app_error.png')
         else:
             pass
 
@@ -60,11 +60,13 @@ class Test_StartUpApp:
         Pages().privacypolicy.click_agree()
         time.sleep(1)
         Pages().privacypolicy.click_jurisdiction()
+        time.sleep(1)
+        Pages().privacypolicy.check_agreement()
         result = self.base_action.isExistsEment(Pages().loginbyphone.login_by_phone)
         if result:
             pass
         else:
-            self.base_action.screenshot('error2.png')
+            self.base_action.screenshot('disagree_and_agree_error.png')
 
         assert result
 

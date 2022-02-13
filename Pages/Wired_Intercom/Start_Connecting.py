@@ -55,7 +55,7 @@ class StartConnecting():
         输入你的描述
         :return:
         """
-        self.base_action.findElement(self.take_text).set_text(text)
+        self.base_action.set_text(self.take_text,text)
 
     def click_determine(self):
         """

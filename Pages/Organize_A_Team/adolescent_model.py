@@ -7,6 +7,7 @@ class Child():
     base_action = BaseAction()
     set_teen_mode = "com.huiian.timing:id/tv_to_set_youth_mode"
     trun_on_young_mode = [0.48, 0.74]
+    know = "com.huiian.timing:id/tv_i_know"
 
 
     def click_set_teen_mode(self):

@@ -13,6 +13,7 @@ class Jurisdiction():
     location = [0.83 , 0.64]
     location2 = "com.android.packageinstaller:id/permission_allow_button"
     child = "com.huiian.timing:id/tv_i_know"
+    one_touch = "com.huiian.timing:id/tv_start"
 
 
     def click_microphone(self):
@@ -56,6 +57,13 @@ class Jurisdiction():
         :return:
         """
         self.base_action.clickElement(self.location2)
+
+    def click_one_touch(self):
+        """
+        一键开启
+        :return:
+        """
+        self.base_action.clickElement(self.one_touch)
 
 
 if __name__ =='__main__':
